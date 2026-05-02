@@ -1,0 +1,26 @@
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+.*.swp
+
+# Editor / IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Local working files
+/tmp/
+*.log
+.env
+.env.local
+
+# Image gen scratch (intermediate frames not worth committing)
+assets/banner-source/*.tmp.*
+assets/banner-source/scratch/
+
+# Python venvs in case any helper script needs one
+.venv/
+__pycache__/
+*.pyc
