@@ -2,6 +2,12 @@
   <img src="assets/banner.gif" alt="The Bard Chat — animated banner" width="100%" />
 </p>
 
+<p align="center">
+  <img src="assets/avatar-turntable.gif" alt="The Bard Chat — rotating avatar concept" width="60%" />
+</p>
+
+> The avatar turntable above is a placeholder built from a chest-up concept render. A proper full-body, multi-angle 360° rotation will replace it once Hugging Face Z-Image-Turbo quota resets — the scheduled follow-up agent (2026-05-09) will generate the consistent multi-angle source frames and rebuild the loop.
+
 # The Bard Chat — in Horizon Worlds
 
 A creator presence inside Meta Horizon Worlds for [@thebardchat](https://github.com/thebardchat).
