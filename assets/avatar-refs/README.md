@@ -43,6 +43,15 @@ A character/creature that IS The Bard. Memorable, brandable, easy to merch.
 
 > Profile avatar portrait, anthropomorphic mascot bard character, friendly stylized fox or owl creature wearing a hooded teal cloak with gold embroidery, holding a tiny ornate lute, big expressive eyes, warm candlelit rim lighting, painterly storybook illustration style, atmospheric mist, drifting golden motes, square 1:1 composition, single subject centered, head and upper shoulders visible, deep teal obsidian background with gold accents, no text, no letters, professional concept art, highly detailed, 8k
 
-## After all four are generated
+## 05 — Multi-angle turntable reference (pending)
 
-Pick one as the primary direction, then use it as visual reference at [meta.com/avatars](https://meta.com/avatars). Meta's editor doesn't accept image uploads — assemble from their parts library to approximate the chosen reference.
+Four views of the chosen bard character (front / three-quarter / side / back) on a single sheet. Useful as visual reference when assembling the parts-based Meta Avatar — Meta's editor doesn't show your reference next to the avatar, so a multi-angle sheet lets you keep the silhouette consistent as you adjust the model.
+
+- **Seed:** 8810
+- **Resolution:** `2016x864 ( 21:9 )` (wider than 1:1 to fit the four views)
+
+> Multi-angle character turntable reference sheet, four views of the same fantasy bard character side by side from left to right showing front view, three-quarter view, side view, and back view, hooded medieval cloak in deep teal and gold, ornate lute, mysterious shadowed face under hood, atmospheric mist, warm golden bioluminescent particles, painterly dark fantasy concept art style, neutral grey backdrop for clean reference, no text, no letters, no labels, professional character design sheet, highly detailed, 8k
+
+## After all five are generated
+
+Pick one of 01–04 as the primary direction. Use 05 (turntable) plus the chosen primary as combined reference at [meta.com/avatars](https://meta.com/avatars). Meta's editor doesn't accept image uploads — assemble from their parts library to approximate the references.

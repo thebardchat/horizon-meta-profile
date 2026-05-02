@@ -37,11 +37,14 @@ If you want to give The Bard Chat a boost in Horizon, you don't need a headset:
 ├── profile/
 │   ├── profile-copy.md          display name, bio variants, link list
 │   ├── setup-walkthrough.md     headset-less click-path to configure the profile
-│   └── privacy-checklist.md     every privacy toggle, recommended setting
-└── promotion/
-    ├── share-kit.md             paste-ready copy for X / IG / threads / email
-    ├── friend-pitch.md          3-line ask for friends and family
-    └── tracking.md              notes on Horizon's built-in share params
+│   ├── privacy-checklist.md     every privacy toggle, recommended setting
+│   └── wearables-submission.md  Meta Avatars Store creator-program playbook
+├── promotion/
+│   ├── share-kit.md             paste-ready copy for X / IG / threads / email
+│   ├── friend-pitch.md          3-line ask for friends and family
+│   └── tracking.md              notes on Horizon's built-in share params
+└── worlds/
+    └── README.md                placeholder for future Horizon Worlds builds
 ```
 
 ## Other thebardchat surfaces
