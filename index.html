@@ -10,8 +10,10 @@
   <meta property="og:image" content="https://raw.githubusercontent.com/thebardchat/horizon-meta-profile/main/assets/banner.gif" />
   <meta property="og:url" content="https://thebardchat.github.io/horizon-meta-profile/" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Bard Chat" />
+  <meta name="twitter:description" content="A creator presence in Meta Horizon Worlds. AI + VR creator. Stories, signal, soft neon." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/thebardchat/horizon-meta-profile/main/assets/banner.gif" />
   <link rel="icon" href="assets/avatar-refs/01-fantasy-bard.webp" type="image/webp" />
-  <script type="module" src="https://unpkg.com/@google/model-viewer@^4.0.0/dist/model-viewer.min.js"></script>
   <style>
     :root {
       --bg: #0d1f2a;
@@ -160,6 +162,35 @@
     }
     .constitution-banner a { color: var(--teal); text-decoration: underline; text-decoration-color: rgba(79, 209, 197, 0.4); }
     .constitution-banner a:hover { color: var(--gold); text-decoration-color: var(--gold); }
+    .about {
+      max-width: 960px;
+      margin: 0 auto 56px;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .about-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(247, 217, 134, 0.1);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+    .about-card h3 {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .about-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
     footer {
       text-align: center;
       color: var(--muted);
@@ -187,7 +218,7 @@
         <div class="pending">
           <img src="assets/avatar-refs/01-fantasy-bard.webp" alt="The Bard Chat — fantasy bard concept" />
           <div class="title">3D avatar coming 2026-05-09</div>
-          <div class="sub">A real <code>.glb</code> mesh of the bard, generated from a full-body image via TRELLIS / SAM3D-Body, will load here with auto-rotate, mouse-drag orbit, and zoom — true 3D in your browser. The scheduled follow-up agent runs once Hugging Face quota resets.</div>
+          <div class="sub">A full 3D mesh of the bard — auto-rotate, orbit controls, and zoom — rendering directly in your browser once the asset is ready.</div>
           <div class="countdown" data-target="2026-05-09T14:00:00Z">loading…</div>
         </div>
       </div>
@@ -198,6 +229,23 @@
       <a class="btn btn-secondary" href="https://github.com/thebardchat/horizon-meta-profile" target="_blank" rel="noopener">View on GitHub</a>
     </div>
 
+    <section class="about">
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Who</h3>
+          <p>An AI + VR creator brand — storytelling, experiments, and the occasional song, operating publicly under an open constitution on GitHub.</p>
+        </div>
+        <div class="about-card">
+          <h3>Where</h3>
+          <p>Live inside Meta Horizon Worlds. Drop into the profile, follow, and catch events, hosted experiences, and new builds as they ship.</p>
+        </div>
+        <div class="about-card">
+          <h3>How it runs</h3>
+          <p>Everything operates under an open doctrine. The constitution sets the standards — what gets built, how it's run, and what The Bard Chat stands for.</p>
+        </div>
+      </div>
+    </section>
+
     <div class="constitution-banner">
       <strong>The Bard Chat operates under our constitution</strong> —
       <a href="https://github.com/thebardchat/constitution" target="_blank" rel="noopener">our by-laws and standards live here</a>.
@@ -205,11 +253,8 @@
 
     <div class="links-row">
       <a href="https://github.com/thebardchat" target="_blank" rel="noopener">GitHub</a>
-      <span>·</span>
       <a href="https://huggingface.co/thebardchat" target="_blank" rel="noopener">Hugging Face</a>
-      <span>·</span>
       <a href="https://github.com/thebardchat/constitution" target="_blank" rel="noopener">Constitution</a>
-      <span>·</span>
       <a href="https://horizon.meta.com/profile/702118972988489/" target="_blank" rel="noopener">Horizon</a>
     </div>
 
@@ -220,32 +265,43 @@
   </main>
 
   <script>
-    // Live countdown to scheduled agent fire time
     (function () {
       const el = document.querySelector('.countdown');
       if (!el) return;
       const target = new Date(el.dataset.target).getTime();
+      const timer = setInterval(tick, 1000);
+      tick();
       function tick() {
         const ms = target - Date.now();
-        if (ms <= 0) { el.textContent = 'rendering now…'; return; }
+        if (ms <= 0) {
+          clearInterval(timer);
+          el.textContent = 'mesh generating…';
+          const titleEl = document.querySelector('.pending .title');
+          if (titleEl) titleEl.textContent = '3D avatar generating now';
+          return;
+        }
         const d = Math.floor(ms / 86400000);
         const h = Math.floor((ms % 86400000) / 3600000);
         const m = Math.floor((ms % 3600000) / 60000);
         const s = Math.floor((ms % 60000) / 1000);
         el.textContent = `T-${d}d ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
       }
-      tick();
-      setInterval(tick, 1000);
     })();
 
-    // When assets/avatar.glb exists, replace the pending placeholder with a live 3D viewer.
-    // This runs progressively: HEAD-checks the GLB, swaps content if found.
     (async function () {
       try {
         const res = await fetch('assets/avatar.glb', { method: 'HEAD' });
         if (!res.ok) return;
         const stage = document.querySelector('.model-stage');
         if (!stage) return;
+        await new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.type = 'module';
+          s.src = 'https://unpkg.com/@google/model-viewer@^4.0.0/dist/model-viewer.min.js';
+          s.onload = resolve;
+          s.onerror = reject;
+          document.head.appendChild(s);
+        });
         stage.innerHTML = `
           <model-viewer
             src="assets/avatar.glb"
