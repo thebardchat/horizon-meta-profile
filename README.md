@@ -2,11 +2,7 @@
   <img src="assets/banner.gif" alt="The Bard Chat — animated banner" width="100%" />
 </p>
 
-<p align="center">
-  <img src="assets/avatar-turntable.gif" alt="The Bard Chat — rotating avatar concept" width="60%" />
-</p>
-
-> The avatar turntable above is a placeholder built from a chest-up concept render. A proper full-body, multi-angle 360° rotation will replace it once Hugging Face Z-Image-Turbo quota resets — the scheduled follow-up agent (2026-05-09) will generate the consistent multi-angle source frames and rebuild the loop.
+> **3D avatar showcase →** see the rotating live 3D model on the [GitHub Pages site](https://thebardchat.github.io/horizon-meta-profile/). It's currently a placeholder; the real `.glb` mesh is queued to render on **2026-05-09** once Hugging Face quota resets (the scheduled follow-up agent will generate a full-body bard image, run it through TRELLIS / SAM3D-Body to produce a true 3D mesh, and the Pages page will auto-render it via `<model-viewer>`).
 
 # The Bard Chat — in Horizon Worlds
 
