@@ -2,7 +2,7 @@
   <img src="assets/banner.gif" alt="The Bard Chat — animated banner" width="100%" />
 </p>
 
-> **3D avatar showcase →** see the rotating live 3D model on the [GitHub Pages site](https://thebardchat.github.io/horizon-meta-profile/). It's currently a placeholder; the real `.glb` mesh is queued to render on **2026-05-09** once Hugging Face quota resets (the scheduled follow-up agent will generate a full-body bard image, run it through TRELLIS / SAM3D-Body to produce a true 3D mesh, and the Pages page will auto-render it via `<model-viewer>`).
+> **3D avatar showcase →** see the [GitHub Pages site](https://thebardchat.github.io/horizon-meta-profile/) for the live viewer. The follow-up agent ran **2026-05-09** and rendered avatar concepts 02–04 but HuggingFace ZeroGPU quota was exhausted before the full-body source image (concept 06) could be generated. The `.glb` pipeline (SAM3D-Body / TRELLIS) and social cards are queued for the next quota reset. Prompts are preserved in `assets/avatar-refs/README.md`.
 
 # The Bard Chat — in Horizon Worlds
 
